@@ -1,0 +1,65 @@
+// ヒーローイメージ・トップページ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+.hero {
+  position: relative;
+  height: 90vh;
+  margin-block-end: 0.5rem;
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 2px,
+      var(--bgColor) 2px,
+      var(--bgColor) 4px,
+    );
+  }
+
+  &__heading {
+    --min-size: 64;
+    --max-size: 80;
+    font-size: var(--clamp-size);
+    text-align: center;
+
+    &Sub {
+      display: block;
+      margin-block-end: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__sns {
+    display: flex;
+    column-gap: 0.3rem;
+    font-size: 1.25rem;
+
+    &Link {
+      &:hover {
+        color: #0bd;
+      }
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: var(--videoOpacity);
+  }
+}

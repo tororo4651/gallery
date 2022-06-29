@@ -1,0 +1,126 @@
+// リスト / 写真
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+.photoList {
+  margin-block-end: 1rem;
+  display: grid;
+  grid-template-columns:
+    46vw 46vw;
+  grid-template-rows:
+    repeat(8, 46vw);
+  grid-template-areas:
+    "A B"
+    "D D"
+    "C E"
+    "F G"
+    "H I"
+    "J J"
+    "K L"
+    "M .";
+  gap: 2vw;
+  justify-content: center;
+
+  &__item {
+
+    &--A {
+      grid-area: A;
+    }
+
+    &--B {
+      grid-area: B;
+    }
+
+    &--C {
+      grid-area: C;
+    }
+
+    &--D {
+      grid-area: D;
+    }
+
+    &--E {
+      grid-area: E;
+    }
+
+    &--F {
+      grid-area: F;
+    }
+
+    &--G {
+      grid-area: G;
+    }
+
+    &--H {
+      grid-area: H;
+    }
+
+    &--I {
+      grid-area: I;
+    }
+
+    &--J {
+      grid-area: J;
+    }
+
+    &--K {
+      grid-area: K;
+    }
+
+    &--L {
+      grid-area: L;
+    }
+
+    &--M {
+      grid-area: M;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+
+  @include g.mq('sm-min') {
+    grid-template-columns:
+      repeat(3, 26vw);
+    grid-template-rows:
+      repeat(5, 26vw);
+    grid-template-areas:
+      "A B C"
+      "D D E"
+      "F G H"
+      "I J J"
+      "K L M";
+    gap: 1vw;
+
+    [data-aos^=fade][data-aos^=fade].aos-animate {
+      transform: none;
+    }
+
+    &__item {
+      &:hover {
+        // z-index: 1;
+      }
+    }
+
+    &__photo {
+      transition: 0.3s;
+
+      &:hover {
+        position: relative;
+        z-index: 1;
+        filter: none;
+        transform: scale(1.1);
+        box-shadow: 0 0 2rem rgba(0,0,0,0.5);
+      }
+    }
+  }
+
+}

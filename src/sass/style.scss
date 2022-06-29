@@ -1,3 +1,8 @@
+// CSSカスタムプロパティ・CSS変数・カスケード変数
+@use "settings/_variables.scss";
+
+
+
 // ベース
 @use "bases/_bases.scss";
 
@@ -40,35 +45,25 @@
 
 // コンポーネント・その他
 
-// メインコンテンツ
-// トップページ
-@use "components/other/mains/_top-main.scss";
-
-
-// セクション
-@use "components/other/sections/_sections.scss";
-// トップページ
-@use "components/other/sections/_top-section.scss";
-
-
 // ディビジョン
 @use "components/other/divisions/_divisions.scss";
 
 
-// ヒーローイメージ・トープページ
-@use "components/other/heroes/top-hero";
+// ヒーローイメージ
+@use "components/other/heroes/_hero.scss";
 
 
-// カルーセル・プライマリ
-@use "components/other/carousels/_primary-carousel.scss";
+// リスト
+// 写真
+@use "components/other/lists/_photo-list.scss";
 
 
-// SNS
-@use "components/other/sns/_sns.scss";
 
 
-// 動画
-@use "components/other/videos/top-video";
+
+// ページ
+// トップページ
+@use "pages";
 
 
 
